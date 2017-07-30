@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Sample App </title>
+    <!-- Custom helper -->
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
+    <!-- calls the stylesheet_link_tag function, with two args - a path to the stylesheet,
+          and a hash with two elements, media type and specifying use of turbolinks feature-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
