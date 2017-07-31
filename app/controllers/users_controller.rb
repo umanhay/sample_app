@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #handle a successful save
+      # temporary message on success using Rails flash method
+      flash[:success] = "Welcome to the Sample App!"
+      # usual practice is to redirect upon save for create action
+      # Rails infers this means user_url(@user)
+      redirect_to @user
     else
       render 'new'
     end
