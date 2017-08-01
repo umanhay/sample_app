@@ -1,0 +1,18 @@
+<% provide(:title, "Edit user") %>
+<% provide(:button_text, "Save changes") %>
+
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <!-- On submit, Rails knows to use PATCH because Active Record checks @user.new_record? -->
+    <!-- If true, uses POST, if false uses PATCH -->
+    <%= render 'users/form' %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <!-- target="_blank" opens link in new window/tab -->
+      <!-- rel="noopener" prevents 3rd party control over window.opener -->
+      <a href="http://gravatar.com/emails" target="_blank" rel="noopener">change</a>
+    </div>
+  </div>
+</div>
