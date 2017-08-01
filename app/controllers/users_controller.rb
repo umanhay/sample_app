@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       # temporary message on success using Rails flash method
       flash[:success] = "Welcome to the Sample App!"
       # usual practice is to redirect upon save for create action
