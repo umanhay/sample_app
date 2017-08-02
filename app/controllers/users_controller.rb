@@ -26,6 +26,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    # update_attributes method accepts a hash of attributes
+    # on success, this method updates and saves
+    # can use update_attibute to pass only one attribute
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated."
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def user_params
