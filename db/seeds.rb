@@ -8,10 +8,11 @@
 
 # create! method is same as create, except it raises an exception for invalid user
 # rather than returning false. Helps make debugging easier by avoiding silent errors.
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
+User.create!(name:  "Dora Explorer",
+             email: "dora@email.com",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin: true)
 
 99.times do |n|
   name  = Faker::Name.name
