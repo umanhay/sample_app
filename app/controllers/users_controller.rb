@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   
   def index
-    @users = User.all 
+    # Use paginate method instead of .all
+    # paginate takes page key and value of page requested. will_paginate gem auto generates page param.
+    @users = User.paginate(page: params[:page])
   end
 
   def show
