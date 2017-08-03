@@ -1,9 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# created_at is embedded Ruby so we can set by hand (possible in fixtures)
 
-one:
-  content: MyText
-  user: one
+ice_cream:
+  content: "I eat ice cream every day!"
+  created_at: <%= 10.minutes.ago %>
 
-two:
-  content: MyText
-  user: two
+puppies:
+  content: "Who doesn't like them?"
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  content: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
